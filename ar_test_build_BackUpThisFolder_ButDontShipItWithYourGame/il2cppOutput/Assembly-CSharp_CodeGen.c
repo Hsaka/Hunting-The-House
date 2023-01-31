@@ -30,10 +30,23 @@ extern void ARFeatheredPlaneMeshVisualizer_ARPlane_boundaryUpdated_mB3D9BBD14EA1
 extern void ARFeatheredPlaneMeshVisualizer_GenerateBoundaryUVs_mF756D3C1F7925A69CD8C7C8CCE56209AB321FEF5 (void);
 extern void ARFeatheredPlaneMeshVisualizer__ctor_m9A77651BCAE58AA0B994FFF6C6B63B1CFF2729F6 (void);
 extern void ARFeatheredPlaneMeshVisualizer__cctor_m56285A000EE27A1631BE9C5BCDA5C376E5D133C3 (void);
+extern void CharacterSkinController_Start_m2ED8C1A6E85BB027E56927831B3CE2D70DED705A (void);
+extern void CharacterSkinController_Update_mCF4D112C073B01B3FE7116B4BC0CC3F1BCE22AB4 (void);
+extern void CharacterSkinController_ChangeAnimatorIdle_m69F8D0AB6368880AA290801DF0A876F350A46A4B (void);
+extern void CharacterSkinController_ChangeMaterialSettings_m3F16EBBDDD89531F8AC62DDA17F9C43DD518B440 (void);
+extern void CharacterSkinController_ChangeEyeOffset_mAA09AF7A4366ACAA2C0DC73841AA51EE6C2F3337 (void);
+extern void CharacterSkinController__ctor_m75FEE78050A3CE20E7C9C1B65F07C829C8EFFD3C (void);
+extern void MovementInput_Start_m1D5FAC189883D81382193EAA2B4F56ACED03EA2B (void);
+extern void MovementInput_Update_m0055BACF87834EA343CE180B3EAC17C76BCE966E (void);
+extern void MovementInput_PlayerMoveAndRotation_m270E7680034E9AC5D9E78DD8C999849B1F6DC760 (void);
+extern void MovementInput_LookAt_m3E29BDBD662B1332B1EF4337026CEBC75AC2D9F5 (void);
+extern void MovementInput_RotateToCamera_m225D0C464FC78177027BF551A0EC8C075835057B (void);
+extern void MovementInput_InputMagnitude_mF5B1680D73D37A5F526BAA14A2762AD0A587BDBC (void);
+extern void MovementInput__ctor_m43627C0B5ABA724DCC0D588DBD5611014934D02F (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_IsEditorOnly_m59E10A16B0BDEA496377805E39C3D90B1E2C4815 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes_Get_mDAD527916A4779DB4ACAFEADC3BA7372671FA647 (void);
 extern void UnitySourceGeneratedAssemblyMonoScriptTypes__ctor_mE2C680837D47039E3F06032AA8C63FEDB7E783A5 (void);
-static Il2CppMethodPointer s_methodPointers[21] = 
+static Il2CppMethodPointer s_methodPointers[34] = 
 {
 	ARController_Update_mF6FF933C2A17DE72AFD2353EAD7FCCD46E839127,
 	ARController__ctor_mBE98AC7E425756F841ABFC40B93AE409D1489D88,
@@ -53,39 +66,65 @@ static Il2CppMethodPointer s_methodPointers[21] =
 	ARFeatheredPlaneMeshVisualizer_GenerateBoundaryUVs_mF756D3C1F7925A69CD8C7C8CCE56209AB321FEF5,
 	ARFeatheredPlaneMeshVisualizer__ctor_m9A77651BCAE58AA0B994FFF6C6B63B1CFF2729F6,
 	ARFeatheredPlaneMeshVisualizer__cctor_m56285A000EE27A1631BE9C5BCDA5C376E5D133C3,
+	CharacterSkinController_Start_m2ED8C1A6E85BB027E56927831B3CE2D70DED705A,
+	CharacterSkinController_Update_mCF4D112C073B01B3FE7116B4BC0CC3F1BCE22AB4,
+	CharacterSkinController_ChangeAnimatorIdle_m69F8D0AB6368880AA290801DF0A876F350A46A4B,
+	CharacterSkinController_ChangeMaterialSettings_m3F16EBBDDD89531F8AC62DDA17F9C43DD518B440,
+	CharacterSkinController_ChangeEyeOffset_mAA09AF7A4366ACAA2C0DC73841AA51EE6C2F3337,
+	CharacterSkinController__ctor_m75FEE78050A3CE20E7C9C1B65F07C829C8EFFD3C,
+	MovementInput_Start_m1D5FAC189883D81382193EAA2B4F56ACED03EA2B,
+	MovementInput_Update_m0055BACF87834EA343CE180B3EAC17C76BCE966E,
+	MovementInput_PlayerMoveAndRotation_m270E7680034E9AC5D9E78DD8C999849B1F6DC760,
+	MovementInput_LookAt_m3E29BDBD662B1332B1EF4337026CEBC75AC2D9F5,
+	MovementInput_RotateToCamera_m225D0C464FC78177027BF551A0EC8C075835057B,
+	MovementInput_InputMagnitude_mF5B1680D73D37A5F526BAA14A2762AD0A587BDBC,
+	MovementInput__ctor_m43627C0B5ABA724DCC0D588DBD5611014934D02F,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_IsEditorOnly_m59E10A16B0BDEA496377805E39C3D90B1E2C4815,
 	UnitySourceGeneratedAssemblyMonoScriptTypes_Get_mDAD527916A4779DB4ACAFEADC3BA7372671FA647,
 	UnitySourceGeneratedAssemblyMonoScriptTypes__ctor_mE2C680837D47039E3F06032AA8C63FEDB7E783A5,
 };
-static const int32_t s_InvokerIndices[21] = 
+static const int32_t s_InvokerIndices[34] = 
 {
-	6393,
-	6393,
-	6293,
-	4995,
-	6393,
-	6393,
-	6393,
-	6393,
-	9813,
-	6335,
-	5028,
-	6393,
-	6393,
-	6393,
-	4871,
-	4995,
-	6393,
-	9813,
-	9740,
-	9770,
-	6393,
+	6395,
+	6395,
+	6295,
+	4997,
+	6395,
+	6395,
+	6395,
+	6395,
+	9817,
+	6337,
+	5030,
+	6395,
+	6395,
+	6395,
+	4873,
+	4997,
+	6395,
+	9817,
+	6395,
+	6395,
+	4997,
+	4964,
+	4964,
+	6395,
+	6395,
+	6395,
+	6395,
+	5074,
+	4997,
+	6395,
+	6395,
+	9744,
+	9774,
+	6395,
 };
 IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	21,
+	34,
 	s_methodPointers,
 	0,
 	NULL,

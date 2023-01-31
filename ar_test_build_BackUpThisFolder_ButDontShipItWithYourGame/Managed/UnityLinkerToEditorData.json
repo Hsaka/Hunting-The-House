@@ -650,6 +650,12 @@
         "name": "Physics",
         "dependencies": [
           {
+            "name": "CharacterController",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "Collider",
             "scenes": [
               "Assets/ExampleAssets/Scenes/SampleScene.unity"
