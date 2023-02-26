@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: a3ebfcc9f087346e0be30bd0ab308f99
+guid: 97213bb2229284665a52802478ccaea7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 3ba8fbd02a2544f1cae4da7cbd69ff22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eye
+    second: {fileID: 2100000, guid: 58efd14b5a1e14c7e838658c62341ef1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pupiil
+    second: {fileID: 2100000, guid: cf2942ce6715c491288db5d7cd7284cd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
