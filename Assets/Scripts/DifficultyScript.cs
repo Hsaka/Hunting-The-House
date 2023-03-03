@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-public class DifficultyScript: ScriptableObject
+public class DifficultyScript:MonoBehaviour
 {
     [SerializeField] private Slider difficulty;
     public TMP_Text levellabel;
