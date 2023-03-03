@@ -10,10 +10,13 @@ public class Timer : MonoBehaviour
     float currentTime;
     public int startMins;
     public TMP_Text currentTimeText;
+    private int difficulty;
     // Start is called before the first frame update
     void Start()
     {
-        currentTime = startMins * 60;
+        
+        difficulty= DifficultyScript.levelint;//get the level value
+        currentTime = difficulty * 60;
     }
 
     // Update is called once per frame

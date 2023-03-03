@@ -35,7 +35,7 @@ public class Progressbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (scollider.bounds.Contains(pubbles))
+        if (scollider)
         {
             
             if (currentValue < 10)
@@ -48,7 +48,6 @@ public class Progressbar : MonoBehaviour
                 currentValue = 0;
                 progBar.fillAmount = 0;//reset when not inside
             }
-            Debug.Log("Bounds contain the point : " + m_Point);
         }
 
         progBar.fillAmount = currentValue / 10;
