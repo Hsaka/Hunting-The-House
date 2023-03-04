@@ -9,7 +9,7 @@ public class DifficultyScript:MonoBehaviour
 {
     [SerializeField] private Slider difficulty;
     public TMP_Text levellabel;
-    public static int levelint=3;
+    public static int levelint=5;
     void Start()
     {
 

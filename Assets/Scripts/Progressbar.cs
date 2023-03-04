@@ -22,35 +22,18 @@ public class Progressbar : MonoBehaviour
     public GameObject pubbles, almond;
     public Image progBar;
     float currentValue;
-    private readonly float speed=1; public Transform m_NewTransform;
-    private Component scollider;
+    private readonly float speed=1;
+    private Component coll;
 
     // Use this for initialization
     void Start()
     {
-        scollider= GetComponent("CatchCircle");
-        progBar.fillAmount = currentValue / 10;
+        coll= GetComponent<Collider>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (scollider)
-        {
-            
-            if (currentValue < 10)
-            {
-                currentValue += speed * Time.deltaTime;
-                progBar.fillAmount = currentValue / 10;
-            }
-            else
-            {
-                currentValue = 0;
-                progBar.fillAmount = 0;//reset when not inside
-            }
-        }
-
-        progBar.fillAmount = currentValue / 10;
     /*
     if (currentValue < 10)
     {
@@ -60,6 +43,30 @@ public class Progressbar : MonoBehaviour
     {
     }*/ 
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if (coll)
+        {
+
+            if (currentValue < 10)
+            {
+                currentValue += speed * Time.deltaTime;
+                progBar.fillAmount = currentValue / 10;
+            }
+        }
+
+        progBar.fillAmount = currentValue / 10;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+    
+        currentValue = 0;
+        progBar.fillAmount = 0;//reset when not inside
+            
     }
 }
 
