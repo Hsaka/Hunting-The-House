@@ -22,8 +22,7 @@ using System;
 
 public class Timer : MonoBehaviour
 {
-    bool active = false;
-    bool inside=false;
+    bool active = false, inside=false;
     float currentTime;
     public int startMins;
     public int score = 0;
@@ -33,7 +32,7 @@ public class Timer : MonoBehaviour
     public Image progBar;
     float currentValue=0;
     private readonly float speed = 1;
-    public Component coll;
+    public Collider coll;
     public Rigidbody rb;
     
 
@@ -43,8 +42,8 @@ public class Timer : MonoBehaviour
     {
 
         scoreText.text = score.ToString();//set score label to score variable
-        rb = GetComponent<Rigidbody>();
-        coll = GetComponent<Collider>();
+        //rb = GetComponent<Rigidbody>();
+        //coll = GetComponent<Collider>();
         difficulty = DifficultyScript.levelint;//get the level value
         currentTime = difficulty * 60;
         progBar.fillAmount = 0;
@@ -53,7 +52,6 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (active)
         {
             currentTime -= Time.deltaTime;
@@ -61,6 +59,24 @@ public class Timer : MonoBehaviour
             {
                 active= false;
                 Start();
+            }
+            if (inside)
+            {
+                scoreText.text = "INSIDE COLLIDER";
+
+                if (currentValue < 10)
+                {
+                    currentValue += speed * Time.deltaTime;
+                    progBar.fillAmount = currentValue / 10;
+                }
+                else
+                {
+                    score += 1;
+                    progBar.fillAmount = 0;
+                    currentValue = 0;
+                }
+
+                progBar.fillAmount = currentValue / 10;
             }
 
 
@@ -85,21 +101,25 @@ public class Timer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        scoreText.text = "INSIDE COLLIDER";
-
-        if (currentValue < 10)
+        if(collision.gameObject)
         {
-            currentValue += speed * Time.deltaTime;
+            inside = true;
+            scoreText.text = "INSIDE COLLIDER";
+
+            if (currentValue < 10)
+            {
+                currentValue += speed * Time.deltaTime;
+                progBar.fillAmount = currentValue / 10;
+            }
+            else
+            {
+                score += 1;
+                progBar.fillAmount = 0;
+                currentValue = 0;
+            }
+
             progBar.fillAmount = currentValue / 10;
         }
-        else
-        {
-            score += 1;
-            progBar.fillAmount = 0;
-            currentValue = 0;
-        }
-
-        progBar.fillAmount = currentValue / 10;
     }
 
     private void OnCollisionExit(Collision collision)
@@ -108,6 +128,45 @@ public class Timer : MonoBehaviour
         currentValue = 0;
         progBar.fillAmount = 0;//reset when not inside
         inside= false;
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject)
+        {
+            inside = true;
+            scoreText.text = "INSIDE COLLIDER";
+
+            if (currentValue < 10)
+            {
+                currentValue += speed * Time.deltaTime;
+                progBar.fillAmount = currentValue / 10;
+            }
+            else
+            {
+                score += 1;
+                progBar.fillAmount = 0;
+                currentValue = 0;
+            }
+
+            progBar.fillAmount = currentValue / 10;
+            
+        }
+        if (other.gameObject.tag == "Patrick")
+        {
+            Debug.Log(other.gameObject.name);
+        }
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log(other.gameObject.name);
+        score += 1;
+        currentValue = 0;
+        progBar.fillAmount = 0;//reset when not inside
+        inside = false;
 
     }
 
