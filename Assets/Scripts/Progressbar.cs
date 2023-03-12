@@ -5,6 +5,7 @@ using System.Drawing;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SocialPlatforms.Impl;
 
 /* Base code is from Gyanendu Shekhar and Comp-3 Interactive
  * 
@@ -45,28 +46,21 @@ public class Progressbar : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-
         if (coll)
         {
-
-            if (currentValue < 10)
-            {
-                currentValue += speed * Time.deltaTime;
-                progBar.fillAmount = currentValue / 10;
-            }
+            this.transform.parent.GetComponent<Timer>().HandleTriggerEnter(other);
         }
-
-        progBar.fillAmount = currentValue / 10;
     }
 
-    private void OnCollisionExit(Collision collision)
+
+    private void OnTriggerExit(Collider other)
     {
-    
-        currentValue = 0;
-        progBar.fillAmount = 0;//reset when not inside
-            
+        if (coll)
+        {
+            this.transform.parent.GetComponent<Timer>().HandleTriggerExit(other);
+        }
     }
 }
 

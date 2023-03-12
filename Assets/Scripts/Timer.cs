@@ -98,40 +98,7 @@ public class Timer : MonoBehaviour
         active= false;
     }
 
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject)
-        {
-            inside = true;
-            scoreText.text = "INSIDE COLLIDER";
-
-            if (currentValue < 10)
-            {
-                currentValue += speed * Time.deltaTime;
-                progBar.fillAmount = currentValue / 10;
-            }
-            else
-            {
-                score += 1;
-                progBar.fillAmount = 0;
-                currentValue = 0;
-            }
-
-            progBar.fillAmount = currentValue / 10;
-        }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        Debug.Log(collision.gameObject.name);
-        currentValue = 0;
-        progBar.fillAmount = 0;//reset when not inside
-        inside= false;
-
-    }
-
-    private void OnTriggerEnter(Collider other)
+    public void HandleTriggerEnter(Collider other)
     {
         if (other.gameObject)
         {
@@ -151,23 +118,16 @@ public class Timer : MonoBehaviour
             }
 
             progBar.fillAmount = currentValue / 10;
-            
-        }
-        if (other.gameObject.tag == "Patrick")
-        {
-            Debug.Log(other.gameObject.name);
+
         }
     }
 
-
-    private void OnTriggerExit(Collider other)
+    public void HandleTriggerExit(Collider other)
     {
         Debug.Log(other.gameObject.name);
-        score += 1;
         currentValue = 0;
         progBar.fillAmount = 0;//reset when not inside
         inside = false;
-
     }
 
 }
